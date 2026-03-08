@@ -1,0 +1,16 @@
+% !TEX program = lualatex
+% !BIB program = bibtex8
+
+\documentclass{article}
+\input{../Utills/packages.tex}
+
+\pagestyle{empty}
+\begin{document}
+    \nocite{*}
+    \bibliographystyle{plain}
+    \bibliography{
+        ../Bibliography/multiple,
+        % ../Bibliography/singe_image,
+        % ../Bibliography/singe_video,
+    }
+\end{document}

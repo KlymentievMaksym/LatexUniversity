@@ -1,0 +1,283 @@
+%!TEX root = ../thesis.tex
+% Encoding: UTF-8
+
+
+@article{2004-colorization-using-optimization,
+  title     = {Colorization using optimization},
+  author    = {Levin, Anat and Lischinski, Dani and Weiss, Yair},
+  journal   = {ACM Transactions on Graphics (ToG). \url{https://www.researchgate.net/publication/2896183_Colorization_using_Optimization}},
+  volume    = {23},
+  number    = {3},
+  pages     = {689--694},
+  year      = {2004},
+  publisher = {ACM},
+  language  = {english},
+  langid    = {english}
+}
+
+@inproceedings{2016-colorful-image-colorization,
+% url = {https://arxiv.org/abs/1603.08511},
+  author    = {Zhang,  Richard and Isola,  Phillip and Efros,  Alexei A.},
+  editor    = {Leibe, Bastian and Matas, Jiri and Sebe, Nicu and Welling, Max},
+  title     = {Colorful Image Colorization},
+  booktitle = {Computer Vision -- ECCV 2016},
+  year      = {2016},
+  publisher = {Springer International Publishing},
+  address   = {Cham},
+  pages     = {649--666},
+  abstract  = {Given a grayscale photograph as input, this paper attacks the problem of hallucinating a plausible color version of the photograph. This problem is clearly underconstrained, so previous approaches have either relied on significant user interaction or resulted in desaturated colorizations. We propose a fully automatic approach that produces vibrant and realistic colorizations. We embrace the underlying uncertainty of the problem by posing it as a classification task and use class-rebalancing at training time to increase the diversity of colors in the result. The system is implemented as a feed-forward pass in a CNN at test time and is trained on over a million color images. We evaluate our algorithm using a ``colorization Turing test,'' asking human participants to choose between a generated and ground truth color image. Our method successfully fools humans on 32 {\%} of the trials, significantly higher than previous methods. Moreover, we show that colorization can be a powerful pretext task for self-supervised feature learning, acting as a cross-channel encoder. This approach results in state-of-the-art performance on several feature learning benchmarks.},
+  isbn      = {978-3-319-46487-9},
+  issn      = {1611-3349},
+  doi       = {10.1007/978-3-319-46487-9_40},
+  url       = {http://dx.doi.org/10.1007/978-3-319-46487-9_40},
+  language  = {english},
+  langid    = {english}
+}
+
+@online{2016-learning-representations-for-automatic-colorization,
+% url = {https://arxiv.org/abs/1908.01311},
+  author   = {Larsson, G. and Maire, M. and Shakhnarovich, G. },
+  title    = {Learning representations for automatic colorization},
+  year     = {2016},
+  url      = {https://link.springer.com/chapter/10.1007/978-3-319-46493-0_35},
+  note     = {In European conference on computer vision (pp. 577-593). Cham: Springer International Publishing.},
+  language = {english},
+  langid   = {english}
+}
+
+@online{2017-deep-koalarization,
+  author   = {Baldassarre, F. and Morín, D. G. and Rodés-Guirao, L.},
+  title    = {Deep koalarization: Image colorization using cnns and inception-resnet-v2},
+  year     = {2017},
+  url      = {https://arxiv.org/abs/1712.03400},
+  note     = {arXiv preprint arXiv:1712.03400},
+  language = {english},
+  langid   = {english}
+}
+
+@inproceedings{2017-image-to-image-translation,
+% url = {https://arxiv.org/abs/1611.07004},
+  author    = {Isola, Phillip and Zhu, Jun-Yan and Zhou, Tinghui and Efros, Alexei A.},
+  title     = {Image-To-Image Translation With Conditional Adversarial Networks},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = jul,
+  year      = {2017},
+  language  = {english},
+  langid    = {english}
+}
+
+@online{2017-real-time-user-guided-image-colorization,
+  author   = {Zhang, R. and Zhu, J. Y. and Isola, P. and Geng, X. and Lin, A. S. and Yu, T. and Efros, A. A.},
+  title    = {Real-time user-guided image colorization with learned deep priors},
+  year     = {2017},
+  url      = {https://arxiv.org/abs/1705.02999},
+  note     = {arXiv preprint arXiv:1705.02999},
+  language = {english},
+  langid   = {english}
+}
+
+@inproceedings{2017-unpaired-image-to-image-translation,
+% url = {https://arxiv.org/abs/1703.10593},
+  author    = {Zhu, Jun-Yan and Park, Taesung and Isola, Phillip and Efros, Alexei A.},
+  title     = {Unpaired Image-To-Image Translation Using Cycle-Consistent Adversarial Networks},
+  booktitle = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)},
+  month     = oct,
+  year      = {2017},
+  url       = {https://openaccess.thecvf.com/content_iccv_2017/html/Zhu_Unpaired_Image-To-Image_Translation_ICCV_2017_paper.html},
+  language  = {english},
+  langid    = {english}
+}
+
+@article{2018-deep-exemplar-based-colorization,
+% url = {https://arxiv.org/abs/1807.06587},
+  author     = {He, Mingming and Chen, Dongdong and Liao, Jing and Sander, Pedro V. and Yuan, Lu},
+  title      = {Deep exemplar-based colorization},
+  year       = {2018},
+  issue_date = {August 2018},
+  publisher  = {Association for Computing Machinery},
+  address    = {New York, NY, USA},
+  volume     = {37},
+  number     = {4},
+  issn       = {0730-0301},
+  url        = {https://doi.org/10.1145/3197517.3201365},
+  doi        = {10.1145/3197517.3201365},
+  abstract   = {We propose the first deep learning approach for exemplar-based local colorization. Given a reference color image, our convolutional neural network directly maps a grayscale image to an output colorized image. Rather than using hand-crafted rules as in traditional exemplar-based methods, our end-to-end colorization network learns how to select, propagate, and predict colors from the large-scale data. The approach performs robustly and generalizes well even when using reference images that are unrelated to the input grayscale image. More importantly, as opposed to other learning-based colorization methods, our network allows the user to achieve customizable results by simply feeding different references. In order to further reduce manual effort in selecting the references, the system automatically recommends references with our proposed image retrieval algorithm, which considers both semantic and luminance information. The colorization can be performed fully automatically by simply picking the top reference suggestion. Our approach is validated through a user study and favorable quantitative comparisons to the-state-of-the-art methods. Furthermore, our approach can be naturally extended to video colorization. Our code and models are freely available for public use.},
+  journal    = {ACM Trans. Graph.},
+  month      = jul,
+  articleno  = {47},
+  numpages   = {16},
+  keywords   = {vision for graphics, exemplar-based colorization, deep learning, colorization},
+  language   = {english},
+  langid     = {english}
+}
+
+@online{2018-learning-to-color-from-language,
+  author   = {Manjunatha, V. and Iyyer, M. and Boyd-Graber, J. and Davis, L.},
+  title    = {Learning to color from language},
+  year     = {2018},
+  url      = {https://arxiv.org/abs/1804.06026},
+  note     = {arXiv preprint arXiv:1804.06026},
+  language = {english},
+  langid   = {english}
+}
+
+@inproceedings{2020-chromagan,
+% url = {https://arxiv.org/abs/1907.09837},
+  author    = {Vitoria, Patricia and Raad, Lara and Ballester, Coloma},
+  title     = {ChromaGAN: Adversarial Picture Colorization with Semantic Class Distribution},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  month     = mar,
+  year      = {2020},
+  url       = {https://openaccess.thecvf.com/content_WACV_2020/html/Vitoria_ChromaGAN_Adversarial_Picture_Colorization_with_Semantic_Class_Distribution_WACV_2020_paper.html},
+  language  = {english},
+  langid    = {english}
+}
+
+@inproceedings{2020-instance-aware-image-colorization,
+% url = {https://arxiv.org/abs/2005.10825},
+  author    = {Su, Jheng-Wei and Chu, Hung-Kuo and Huang, Jia-Bin},
+  title     = {Instance-Aware Image Colorization},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = jun,
+  year      = {2020},
+  url       = {https://openaccess.thecvf.com/content_CVPR_2020/html/Su_Instance-Aware_Image_Colorization_CVPR_2020_paper.html},
+  language  = {english},
+  langid    = {english}
+}
+
+@online{2021-colorization-transformer,
+  author   = {Kumar, M. and Weissenborn, D. and Kalchbrenner, N.},
+  title    = {Colorization transformer},
+  year     = {2021},
+  url      = {https://arxiv.org/abs/2102.04432},
+  note     = {arXiv preprint arXiv:2102.04432},
+  language = {english},
+  langid   = {english}
+}
+
+@inproceedings{2022-palette-image-to-image-diffusion-models,
+% url = {https://arxiv.org/abs/2111.05826},
+  author    = {Saharia, Chitwan and Chan, William and Chang, Huiwen and Lee, Chris and Ho, Jonathan and Salimans, Tim and Fleet, David and Norouzi, Mohammad},
+  title     = {Palette: Image-to-Image Diffusion Models},
+  year      = {2022},
+  isbn      = {9781450393379},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3528233.3530757},
+  doi       = {10.1145/3528233.3530757},
+  abstract  = {This paper develops a unified framework for image-to-image translation based on conditional diffusion models and evaluates this framework on four challenging image-to-image translation tasks, namely colorization, inpainting, uncropping, and JPEG restoration. Our simple implementation of image-to-image diffusion models outperforms strong GAN and regression baselines on all tasks, without task-specific hyper-parameter tuning, architecture customization, or any auxiliary loss or sophisticated new techniques needed. We uncover the impact of an L2 vs. L1 loss in the denoising diffusion objective on sample diversity, and demonstrate the importance of self-attention in the neural architecture through empirical studies. Importantly, we advocate a unified evaluation protocol based on ImageNet, with human evaluation and sample quality scores (FID, Inception Score, Classification Accuracy of a pre-trained ResNet-50, and Perceptual Distance against original images). We expect this standardized evaluation protocol to play a role in advancing image-to-image translation research. Finally, we show that a generalist, multi-task diffusion model performs as well or better than task-specific specialist counterparts. Check out https://diffusion-palette.github.io/ for an overview of the results and code.},
+  booktitle = {ACM SIGGRAPH 2022 Conference Proceedings},
+  articleno = {15},
+  numpages  = {10},
+  keywords  = {Deep learning, Diffusion models. and Generative models},
+  location  = {Vancouver, BC, Canada},
+  series    = {SIGGRAPH '22},
+  language  = {english},
+  langid    = {english}
+}
+
+@article{2022-unicolor,
+% url = {https://arxiv.org/abs/2209.11223},
+  author     = {Huang, Zhitong and Zhao, Nanxuan and Liao, Jing},
+  title      = {UniColor: A Unified Framework for Multi-Modal Colorization with Transformer},
+  year       = {2022},
+  issue_date = {December 2022},
+  publisher  = {Association for Computing Machinery},
+  address    = {New York, NY, USA},
+  volume     = {41},
+  number     = {6},
+  issn       = {0730-0301},
+  url        = {https://doi.org/10.1145/3550454.3555471},
+  doi        = {10.1145/3550454.3555471},
+  abstract   = {We propose the first unified framework UniColor to support colorization in multiple modalities, including both unconditional and conditional ones, such as stroke, exemplar, text, and even a mix of them. Rather than learning a separate model for each type of condition, we introduce a two-stage colorization framework for incorporating various conditions into a single model. In the first stage, multi-modal conditions are converted into a common representation of hint points. Particularly, we propose a novel CLIP-based method to convert the text to hint points. In the second stage, we propose a Transformer-based network composed of Chroma-VQGAN and Hybrid-Transformer to generate diverse and high-quality colorization results conditioned on hint points. Both qualitative and quantitative comparisons demonstrate that our method outperforms state-of-the-art methods in every control modality and further enables multi-modal colorization that was not feasible before. Moreover, we design an interactive interface showing the effectiveness of our unified framework in practical usage, including automatic colorization, hybrid-control colorization, local recolorization, and iterative color editing. Our code and models are available at https://luckyhzt.github.io/unicolor.},
+  journal    = {ACM Trans. Graph.},
+  month      = nov,
+  articleno  = {205},
+  numpages   = {16},
+  keywords   = {color editing, colorization, multi-modal controls, transformer},
+  language   = {english},
+  langid     = {english}
+}
+
+@inproceedings{2023-cold-diffusion,
+% url = {https://arxiv.org/abs/2208.09392},
+  author    = {Bansal, Arpit and Borgnia, Eitan and Chu, Hong-Min and Li, Jie and Kazemi, Hamid and Huang, Furong and Goldblum, Micah and Geiping, Jonas and Goldstein, Tom},
+  booktitle = {Advances in Neural Information Processing Systems},
+  editor    = {A. Oh and T. Naumann and A. Globerson and K. Saenko and M. Hardt and S. Levine},
+  pages     = {41259--41282},
+  publisher = {Curran Associates, Inc.},
+  title     = {Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2023/file/80fe51a7d8d0c73ff7439c2a2554ed53-Paper-Conference.pdf},
+  volume    = {36},
+  year      = {2023},
+  language  = {english},
+  langid    = {english}
+}
+
+@inproceedings{2023-ddcolor,
+% url = {https://arxiv.org/abs/2212.11613},
+  author    = {Kang, Xiaoyang and Yang, Tao and Ouyang, Wenqi and Ren, Peiran and Li, Lingzhi and Xie, Xuansong},
+  title     = {DDColor: Towards Photo-Realistic Image Colorization via Dual Decoders},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month     = oct,
+  year      = {2023},
+  pages     = {328-338},
+  language  = {english},
+  langid    = {english}
+}
+
+@inbook{2023-diffusing-colors,
+% url = {https://arxiv.org/abs/2312.04145v1},
+  author    = {Zabari, Nir and Azulay, Aharon and Gorkor, Alexey and Halperin, Tavi and Fried, Ohad},
+  title     = {Diffusing Colors: Image Colorization with Text Guided Diffusion},
+  year      = {2023},
+  isbn      = {9798400703157},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3610548.3618180},
+  abstract  = {The colorization of grayscale images is a complex and subjective task with significant challenges. Despite recent progress in employing large-scale datasets with deep neural networks, difficulties with controllability and visual quality persist. To tackle these issues, we present a novel image colorization framework that utilizes image diffusion techniques with granular text prompts. This integration not only produces colorization outputs that are semantically appropriate but also greatly improves the level of control users have over the colorization process. Our method provides a balance between automation and control, outperforming existing techniques in terms of visual quality and semantic coherence. We leverage a pretrained generative Diffusion Model, and show that we can finetune it for the colorization task without losing its generative power or attention to text prompts. Moreover, we present a novel CLIP-based ranking model that evaluates color vividness, enabling automatic selection of the most suitable level of vividness based on the specific scene semantics. Our approach holds potential particularly for color enhancement and historical image colorization.},
+  booktitle = {SIGGRAPH Asia 2023 Conference Papers},
+  articleno = {61},
+  numpages  = {11},
+  language  = {english},
+  langid    = {english}
+}
+
+@inproceedings{2023-icolorit,
+% url = {https://arxiv.org/abs/2207.06831},
+  author    = {Yun, Jooyeol and Lee, Sanghyeon and Park, Minho and Choo, Jaegul},
+  title     = {iColoriT: Towards Propagating Local Hints to the Right Region in Interactive Colorization by Leveraging Vision Transformer},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  month     = jan,
+  year      = {2023},
+  pages     = {1787-1796},
+  url       = {https://openaccess.thecvf.com/content/WACV2023/html/Yun_iColoriT_Towards_Propagating_Local_Hints_to_the_Right_Region_in_WACV_2023_paper.html},
+  language  = {english},
+  langid    = {english}
+}
+
+@inproceedings{2023-l-cad,
+% url = {https://arxiv.org/abs/2305.15217},
+  author    = {chang, zheng and Weng, Shuchen and Zhang, Peixuan and Li, Yu and Li, Si and Shi, Boxin},
+  booktitle = {Advances in Neural Information Processing Systems},
+  editor    = {A. Oh and T. Naumann and A. Globerson and K. Saenko and M. Hardt and S. Levine},
+  pages     = {77174--77186},
+  publisher = {Curran Associates, Inc.},
+  title     = {L-CAD: Language-based Colorization with Any-level Descriptions using Diffusion Priors},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2023/file/f3bfbd65743e60c685a3845bd61ce15f-Paper-Conference.pdf},
+  volume    = {36},
+  year      = {2023},
+  language  = {english},
+  langid    = {english}
+}
+
+@online{2025-control-color,
+% url = {https://arxiv.org/abs/2402.10855},
+  author   = {Liang, Z. and Li, Z. and Zhou, S. and Li, C. and Loy, C. C.},
+  title    = {Control Color: Multimodal Diffusion-based Interactive Image Colorization},
+  year     = {2025},
+  url      = {https://link.springer.com/article/10.1007/s11263-025-02549-6},
+  note     = {Z. Liang et al. International Journal of Computer Vision, 1-27},
+  language = {english},
+  langid   = {english}
+}
