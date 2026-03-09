@@ -4,16 +4,21 @@
 \documentclass{article}
 \input{../Utills/packages.tex}
 
-% To fix overfull
+% To fix underfull
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\AtBeginEnvironment{thebibliography}{\RaggedRight}
 \usepackage{xurl}
+\sloppy
 
 \pagestyle{empty}
 \begin{document}
     \nocite{*}
-    \bibliographystyle{plain}
+    \renewcommand{\refname}{Перелік посилань}
+    \bibliographystyle{ieeetr}
     \bibliography{
-        ./Bibliography/multiple,
-        ./Bibliography/single_image,
-        ./Bibliography/single_video
+        ../Bibliography/multiple,
+        ../Bibliography/single_image,
+        ../Bibliography/single_video
     }
 \end{document}

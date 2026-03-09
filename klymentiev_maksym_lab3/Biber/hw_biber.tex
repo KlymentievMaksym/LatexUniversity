@@ -4,17 +4,24 @@
 \documentclass{article}
 \input{../Utills/packages.tex}
 
-\usepackage[autolang=other]{biblatex}
+\usepackage[
+    backend=biber,
+    style=gost-numeric,
+    language=auto,
+    autolang=other,
+    sorting=none,
+]{biblatex}
 
 % To fix overfull
 \usepackage{xurl}
+\sloppy
 
-\addbibresource{./Bibliography/multiple.bib}
-\addbibresource{./Bibliography/single_image.bib}
-\addbibresource{./Bibliography/single_video.bib}
+\addbibresource{../Bibliography/multiple.bib}
+\addbibresource{../Bibliography/single_image.bib}
+\addbibresource{../Bibliography/single_video.bib}
 
 \pagestyle{empty}
 \begin{document}
     \nocite{*}
-    \printbibliography[heading=bibintoc,title={Перелік посилань}]
+    \printbibliography[title={Перелік посилань}]
 \end{document}
