@@ -5,14 +5,16 @@
 \input{../Utills/packages.tex}
 
 \usepackage[autolang=other]{biblatex}
-\addbibresource{../Bibliography/multiple.bib}
-\addbibresource{../Bibliography/single_image.bib}
-\addbibresource{../Bibliography/single_video.bib}
-% \addbibresource{../Bibliography/references.bib}
+
+% To fix overfull
+\usepackage{xurl}
+
+\addbibresource{./Bibliography/multiple.bib}
+\addbibresource{./Bibliography/single_image.bib}
+\addbibresource{./Bibliography/single_video.bib}
 
 \pagestyle{empty}
 \begin{document}
     \nocite{*}
     \printbibliography[heading=bibintoc,title={Перелік посилань}]
-    %,style=alphabetic
 \end{document}

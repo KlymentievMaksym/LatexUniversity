@@ -4,13 +4,16 @@
 \documentclass{article}
 \input{../Utills/packages.tex}
 
+% To fix overfull
+\usepackage{xurl}
+
 \pagestyle{empty}
 \begin{document}
     \nocite{*}
     \bibliographystyle{plain}
     \bibliography{
-        ../Bibliography/multiple,
-        ../Bibliography/single_image,
-        ../Bibliography/single_video
+        ./Bibliography/multiple,
+        ./Bibliography/single_image,
+        ./Bibliography/single_video
     }
 \end{document}
