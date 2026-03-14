@@ -1,0 +1,38 @@
+% !TEX program = lualatex
+
+\documentclass{article}
+
+\input{../Utills/packages.tex}
+
+%%%
+\title{Енергія}
+\author{}
+\date{}
+
+\newcounter{Example}[section]
+\renewcommand{\theExample}{\thesection.\arabic{Example}}
+\NewDocumentEnvironment{Example}{O{blue}}
+{
+    \setcounter{equation}{0}
+    \renewcommand{\theequation}{\theExample--\arabic{equation}}
+
+    \refstepcounter{Example}
+
+    \vspace{1.5em}
+    \hrule
+    \vspace{0.5em}
+    
+    \textbf{Приклад} \theExample:
+    \begingroup
+    \color{#1}
+}
+{
+    \endgroup
+    \vspace{1em}
+    \hrule
+    \vspace{1em}
+}
+
+%%%
+
+\input{../Task/counters_problem.tex}
