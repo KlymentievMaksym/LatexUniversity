@@ -1,0 +1,80 @@
+% !TEX program = lualatex
+
+\documentclass{article}
+
+
+\input{../Utills/packages.tex}
+
+\begin{document}
+    \pagestyle{empty}
+
+    \NewDocumentCommand{\days}{}{Дні}
+    \NewDocumentCommand{\hours}{}{Години}
+    \NewDocumentCommand{\weekOne}{}{I Тиждень}
+    \NewDocumentCommand{\weekTwo}{}{II Тиждень}
+
+    \NewDocumentCommand{\rotate}{m}{\rotatebox{90}{#1}}
+    \NewDocumentCommand{\Mon}{}{\rotate{Понеділок}}
+    \NewDocumentCommand{\Tue}{}{\rotate{Вівторок}}
+    \NewDocumentCommand{\Wed}{}{\rotate{Середа}}
+    \NewDocumentCommand{\Thu}{}{\rotate{Четвер}}
+    \NewDocumentCommand{\Fri}{}{\rotate{П’ятниця}}
+    \NewDocumentCommand{\Sat}{}{\rotate{Субота}}
+
+    \NewDocumentCommand{\A}{}{$8^{30}$ -- $10^{05}$}
+    \NewDocumentCommand{\B}{}{$10^{25}$ -- $12^{00}$}
+    \NewDocumentCommand{\C}{}{$12^{20}$ -- $13^{55}$}
+    \NewDocumentCommand{\D}{}{$14^{15}$ -- $15^{50}$}
+    \NewDocumentCommand{\E}{}{$16^{10}$ -- $17^{45}$}
+    \NewDocumentCommand{\F}{}{$18^{30}$ -- $20^{05}$}
+    \NewDocumentCommand{\G}{}{$20^{20}$ -- $21^{55}$}
+
+
+    \begin{center}
+        % \LARGE{\textbf{Розклад занять}}
+        \LARGE{Розклад занять}
+        \begin{tblr}
+            {
+                colspec = {c c X[c] X[c] c c X[c] X[c]},
+                %
+                row{1} = {font=\bfseries},
+                row{even} = {bg=gray!5},
+                row{odd} = {bg=cyan!10},
+                row{1} = {bg=gray!20},
+                %
+                column{1, 5} = {font=\bfseries},
+                column{1, 5} = {bg=gray!20},
+                cell{2, 9, 16}{1, 5}= {r=7,c=1}{c},
+                %
+                hlines,
+                vlines,
+                hline{2, 9, 16} = {2}{-}{solid},
+                vline{2, 3, 5, 6, 7} = {2}{-}{solid},
+            }
+            \days & \hours & \weekOne & \weekTwo & \days & \hours & \weekOne & \weekTwo \\
+            \Mon  & \A     &          &          & \Thu  & \A     &          &  \\
+                  & \B     &          &          &       & \B     &          &  \\
+                  & \C     &          &          &       & \C     &          &  \\
+                  & \D     &          &          &       & \D     &          &  \\
+                  & \E     &          &          &       & \E     &          &  \\
+                  & \F     &          &          &       & \F     &          &  \\
+                  & \G     &          &          &       & \G     &          &  \\
+            \Tue  & \A     &          &          & \Fri  & \A     &          &  \\
+                  & \B     &          &          &       & \B     &          &  \\
+                  & \C     &          &          &       & \C     &          &  \\
+                  & \D     &          &          &       & \D     &          &  \\
+                  & \E     &          &          &       & \E     &          &  \\
+                  & \F     &          &          &       & \F     &          &  \\
+                  & \G     &          &          &       & \G     &          &  \\
+            \Wed  & \A     &          &          & \Sat  & \A     &          &  \\
+                  & \B     &          &          &       & \B     &          &  \\
+                  & \C     &          &          &       & \C     &          &  \\
+                  & \D     &          &          &       & \D     &          &  \\
+                  & \E     &          &          &       & \E     &          &  \\
+                  & \F     &          &          &       & \F     &          &  \\
+                  & \G     &          &          &       & \G     &          &  \\
+            
+        \end{tblr}
+    \end{center}
+
+\end{document}
