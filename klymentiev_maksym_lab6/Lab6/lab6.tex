@@ -1,0 +1,118 @@
+% !TEX program = lualatex
+
+\documentclass[border=1cm]{standalone}
+% \documentclass{article}
+
+\input{../Utills/packages.tex}
+
+    \NewDocumentCommand{\forms}{m m m}
+    {
+        \foreach \i in {1, 2, ..., 60}
+        {
+            \draw[#1]  ({#2}:{\R-0.5}) -- ({#3}:{\R});
+        }
+    }
+    \NewDocumentCommand{\circles}{m m m m m}
+    {
+        \foreach \i in {1, \step, ..., #5}
+        {
+            \draw[#1, line width=\i/#2] (#3) circle ({\i + #4});
+        }
+    }
+    \NewDocumentCommand{\clockhand}{m m m m m m}
+    {
+        \draw[#1, line width={#3+3}, -#4] (0, 0) -- (#6);
+        \draw[#2, line width=#3, -#5] (0, 0) -- (#6);
+    }
+
+
+    \NewDocumentCommand{\Clock}{m m}
+    {
+        % \colorlet{Main}{red!60!black}
+        % \colorlet{Secondary}{black!80!orange}
+        % \colorlet{Hour}{red}
+        % \colorlet{Minute}{red}
+
+        \definecolor{Main}{HTML}{0B0033}
+        \definecolor{Secondary}{HTML}{370031}
+        % \definecolor{Hour}{HTML}{F3752B}
+        % \definecolor{Minute}{HTML}{832232}
+        \definecolor{Hour}{HTML}{AEC5EB}
+        \definecolor{Minute}{HTML}{AEC5EB}
+
+
+        \pgfmathsetmacro{\R}{15}
+        \pgfmathsetmacro{\mainR}{7}
+        \pgfmathsetmacro{\step}{3}
+        \pgfmathsetmacro{\arrowLength}{30}
+        \pgfmathsetmacro{\arrowWidth}{20}
+        \pgfmathsetmacro{\arrowHourLength}{0.6*\mainR}
+        \pgfmathsetmacro{\arrowMinuteLength}{0.85*\mainR}
+
+        \begin{tikzpicture}            
+            %BG circles
+            \foreach \i in {1, 2, ..., 4}
+            {
+                \pgfmathsetmacro{\valo}{100/\i}
+                \pgfmathsetmacro{\vald}{-(\i - 1)*0.5}
+                \circles{Main!\valo}{\step * \i}{0, 0}{\vald}{\R}
+            }
+            %BG pattern
+            \forms{Secondary!10}{30*\i}{50*\i}
+            \forms{Secondary!10}{30*\i+90}{50*\i+90}
+            \fill[white] (0,0) circle (\mainR);
+            %BG circles
+            \foreach \i in {1, 2, ..., 4}
+            {
+                \pgfmathsetmacro{\valo}{100/\i}
+                \pgfmathsetmacro{\vald}{-(\i - 1)*0.5}
+                \circles{Main!\valo}{\step * \i}{0, 0}{\vald}{\mainR}
+                \circles{Main!\valo}{\step/\i}{0, 0}{\vald}{\R}
+            }
+
+            %FG time
+            \foreach \i in {1, 2, ..., 12}
+            {
+                \node[draw, circle, Secondary, fill=Secondary!10, minimum size={16*\step}, anchor={-30*\i-90}, font=\LARGE] at ({-30*\i+90}:{\mainR+0.3}){\i};
+                \draw[]  ({-30*\i+90}:{\arrowHourLength+0.05}) -- ({-30*\i+90}:{\arrowHourLength+0.8});
+                \draw[]  ({-30*\i+90}:{\mainR-1}) -- ({-30*\i+90}:{\mainR});
+            }
+            \foreach \i in {1, 2, ..., 60}
+            {
+                \draw[]  ({-6*\i+90}:{\arrowHourLength+0.3}) -- ({-6*\i+90}:{\arrowHourLength+0.8});
+                \draw[]  ({-6*\i+90}:{\mainR-0.5}) -- ({-6*\i+90}:{\mainR});
+            }
+
+            %FG arrows
+            \pgfmathsetmacro{\size}{10}
+            \pgfmathsetmacro{\hour}{mod(#1, 12)}
+            \pgfmathsetmacro{\minute}{mod(#2, 60)}
+            \coordinate (hour) at (-{30*\hour - 6*\minute/12}+90:\arrowHourLength);
+            \coordinate (minute) at (-{6*\minute}+90:\arrowMinuteLength);
+            \clockhand
+                {Main}{Hour}{\size}
+                {{Kite[length=\arrowLength, width=\arrowWidth+\size]}}
+                {{Kite[length=\arrowLength, width=\arrowWidth, color=Hour!50]}}
+                {hour}
+            \clockhand
+                {Main}{Minute}{\size}
+                {{Diamond[length=\arrowLength, width=\arrowWidth+\size]}}
+                {{Diamond[length=\arrowLength, width=\arrowWidth, color=Minute!50]}}
+                {minute}
+
+            \fill[white] (0,0) circle (\size pt);
+            \draw[black, line width=2pt] (0,0) circle (\size pt);
+        \end{tikzpicture}
+    }
+\begin{document}
+    % \Clock{6}{30}
+    \Clock{\the\currenthour}{\the\currentminute}
+
+    % \begin{animateinline}[loop, controls]{60}
+    %     \multiframe{720}{iTotal=0+1}{
+    %         \pgfmathsetmacro{\iHour}{int(\iTotal/60)}
+    %         \pgfmathsetmacro{\iMinute}{mod(\iTotal,60)}
+    %         \Clock{\iHour}{\iMinute}
+    %     }
+    % \end{animateinline}
+\end{document}
