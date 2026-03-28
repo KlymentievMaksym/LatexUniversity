@@ -1,0 +1,67 @@
+% !TEX program = lualatex
+
+\documentclass[border=0.5cm]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{intersections}
+\usetikzlibrary{calc}
+
+% Arguments:
+% #1: Function 1
+% #2: Function 2
+% #3: Intersection point style (default: color=red)
+% #4: Axis options (limits, labels, etc.)
+% #5: Global plot options (markers, line width, etc.)
+% #6: Plot 1 specific style (color)
+% #7: Plot 2 specific style (color)
+\NewDocumentCommand{\Intersections}{m m O{color=red} O{no markers} O{} O{color=blue} O{color=red}}
+{
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines=middle,
+            axis line style={->},
+            xlabel=$x$,
+            ylabel=$y$,
+            samples=400,
+            #4
+        ]
+            \pgfdeclarelayer{background}
+            \pgfdeclarelayer{foreground}
+            \pgfsetlayers{background,main,foreground}
+
+            \begin{pgfonlayer}{background}
+                \addplot[name path global=pos, #5, #6]{#1};
+                \addplot[name path global=neg, #5, #7]{#2};
+            \end{pgfonlayer}
+
+            \begin{pgfonlayer}{foreground}
+            \path (0,0) [#3, name intersections={of=pos and neg, total=\t}] %node {\t}
+                \ifnum\t>0
+                    \foreach \s in {1,...,\t}
+                    {
+                        (intersection-\s)
+                        node[circle, fill, inner sep=1.5pt]{}
+                        
+                        node[above]
+                        {
+                            \pgfplotspointgetcoordinates{(intersection-\s)}
+                            $(
+                                \pgfmathprintnumber[precision=2]{\pgfkeysvalueof{/data point/x}}, 
+                                \pgfmathprintnumber[precision=2]{\pgfkeysvalueof{/data point/y}}
+                            )$
+                        }
+                    }
+                \fi;
+            \end{pgfonlayer}
+        \end{axis}
+    \end{tikzpicture}
+}
+
+\begin{document}
+    \begin{tabular}{c c}    
+        \Intersections{cos(deg(x))}{sin(deg(x))}[color = green!50!blue, opacity = 0.9][domain=-2*pi:2*pi] &
+        \Intersections{x^3}{x^2-x} \\
+        \Intersections{x^2+3}{-x^2-3}[][color=blue, samples=50][mark=-][color=green!50!blue][color=red] &
+        \Intersections{x^2+3}{-x^2+3}[][color=blue, samples=400][mark=*][color=green!50!blue][color=red] \\
+    \end{tabular}
+\end{document}
